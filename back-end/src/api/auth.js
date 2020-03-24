@@ -16,7 +16,7 @@ router.post('/login', (req, res) => {
   UserModel.findOne({
     username: req.body.username
   })
-    .then(user => {
+    .then((user) => {
       // non registered user
       if (!user) {
         res.status(401).send('Authentication failed. User not found.');
@@ -47,37 +47,31 @@ router.post('/login', (req, res) => {
         }
       });
     })
-    .catch(error => {
+    .catch((error) => {
       res.status(500).json('Internal Server Error');
       throw error;
     });
 });
 
-router.post('/signup', (req, res) => {
+router.post('/signup', async (req, res) => {
   const {username, password, nickname} = req.body;
+
   // encrypt password
   // NOTE: 10 is saltround which is a cost factor
-  bcrypt.hash(password, 10, (error, hashedPassword) => {
-    if (error) {
-      console.log(error);
-      return res.status(500).json({
-        error
-      });
-    }
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const newUser = new UserModel({
       username,
       password: hashedPassword,
       nickname
     });
-    newUser.save((err, saved) => {
-      if (err) {
-        console.log(err);
-        return res.status(409).send(err);
-      }
-      console.log(saved);
-      return res.send(saved);
-    });
-  });
+
+    const savedUser = await newUser.save();
+    return res.status(200).json(savedUser);
+  } catch (error) {
+    return res.status(500).json({error});
+  }
 });
 
 // TODO: Logout 구현 필요

@@ -1,6 +1,6 @@
-# Standard Vue.js TIL
+# Standard Vue.js TIL(Today I Learned)
 
-### 1.Vue.js 끝장내기 - 실무에 필요한 모든 것 강의의 실습 예제 기반
+### 1. Vue.js 끝장내기 - 실무에 필요한 모든 것 강의의 실습 예제 기반
 
 * [Vue.js 끝장내기 - 실무에 필요한 모든 것](https://www.inflearn.com/course/vue-js-끝내기-캡틴판교 "Vue.js 끝장내기 - 실무에 필요한 모든 것") 참고
 
@@ -19,6 +19,18 @@
 
     ``` javascript
     vue create [프로젝트 명]
+    ```
+
+* vue-router & vuex
+  
+    ``` javascript
+    npm i vue-router vuex
+    ```
+
+* axios
+
+    ``` javascript
+    npm i axios
     ```
 
 * eslint & prettier
