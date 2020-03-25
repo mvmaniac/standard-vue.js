@@ -30,6 +30,7 @@ export const authenticateUser = async (req, res, next) => {
 
   const token = req.headers.authorization;
   let payload;
+
   try {
     payload = await verifyToken(token);
   } catch (e) {
