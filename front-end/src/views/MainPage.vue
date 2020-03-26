@@ -9,6 +9,9 @@
         :post="post"
       ></post-list-item>
     </ul>
+    <router-link to="/add" class="create-button">
+      <ion-icon name="add-outline"></ion-icon>
+    </router-link>
   </div>
 </template>
 

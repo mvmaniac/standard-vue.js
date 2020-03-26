@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {setInterceptors} from './common/interceptors';
+import setInterceptors from './common/interceptors';
 
 // 엑시오스 초기화 함수
 function createInstance() {
@@ -29,5 +29,3 @@ function fetchPosts() {
 }
 
 export {registerUser, loginUser, fetchPosts};
-
-export default {};

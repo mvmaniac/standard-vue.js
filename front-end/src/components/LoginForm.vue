@@ -31,6 +31,7 @@
 <script>
   import {loginUser} from '@/apis';
   import {validateEmail} from '@/utils/validation';
+  import {saveAuthToCookie, saveUserToCookie} from '@/utils/cookies';
 
   export default {
     data() {
@@ -56,12 +57,7 @@
             username: this.username,
             password: this.password
           };
-
-          const {data: result} = await loginUser(data);
-
-          this.$store.commit('SET_USERNAME', result.user.username);
-          this.$store.commit('SET_TOKEN', result.token);
-
+          await this.$store.dispatch('LOGIN_USER', data);
           this.$router.push('/main');
         } catch (error) {
           console.error(error);

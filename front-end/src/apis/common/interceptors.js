@@ -1,10 +1,10 @@
-import store from '@/stores';
+import {getAuthFromCookie} from '@/utils/cookies';
 
-export function setInterceptors(instance) {
+export default function setInterceptors(instance) {
   instance.interceptors.request.use(
     (config) => {
       const draftConfig = config;
-      draftConfig.headers.Authorization = store.state.token;
+      draftConfig.headers.Authorization = getAuthFromCookie();
       return draftConfig;
     },
     (error) => Promise.reject(error)
@@ -17,5 +17,3 @@ export function setInterceptors(instance) {
 
   return instance;
 }
-
-export default {};
