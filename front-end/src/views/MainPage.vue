@@ -1,21 +1,32 @@
 <template>
   <div class="main list-container contents">
     <h1 class="page-header">Today I Learned</h1>
-    <ul>
-      <li v-for="post in items" :key="post._id">
-        {{ post.title }}
-      </li>
+    <loading-spinner v-if="isLoading"></loading-spinner>
+    <ul v-else>
+      <post-list-item
+        v-for="post in posts"
+        :key="post._id"
+        :post="post"
+      ></post-list-item>
     </ul>
   </div>
 </template>
 
 <script>
+  import PostListItem from '@/components/posts/PostListItem.vue';
+  import LoadingSpinner from '@/components/common/LoadingSpinner.vue';
+
   import {fetchPosts} from '@/apis';
 
   export default {
+    components: {
+      PostListItem,
+      LoadingSpinner
+    },
     data() {
       return {
-        items: []
+        posts: [],
+        isLoading: false
       };
     },
     created() {
@@ -23,8 +34,12 @@
     },
     methods: {
       async fetchData() {
+        this.isLoading = true;
+
         const {data} = await fetchPosts();
-        this.items = data.posts;
+        this.posts = data.posts;
+
+        this.isLoading = false;
       }
     }
   };

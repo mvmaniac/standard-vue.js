@@ -11,7 +11,11 @@
 
 ### 3. TODO
 
+*
+
 ### 4. Setting
+
+*
 
 #### 4-1. front-end
 
@@ -45,3 +49,5 @@
 * [vue-til-server](https://github.com/joshua1988/vue-til-server "vue-til-server")의 Repository를  사용함
 
 ### 5. etc
+
+*
