@@ -159,7 +159,6 @@ a:hover {
 	font-size: 1.3rem;
 	cursor: pointer;
 	color: #364f6b;
-	padding-right: 0.4rem;
 }
 .icon:hover {
 	color: #3fc1c9;
@@ -168,7 +167,8 @@ a:hover {
 	color: #fc5185;
 }
 .ion-md-create {
-	padding-left: 0.1rem;
+  padding-left: 0.1rem;
+  vertical-align: bottom;
 }
 .create-button {
 	width: 60px;

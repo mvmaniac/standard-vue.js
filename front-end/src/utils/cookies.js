@@ -24,10 +24,19 @@ function deleteCookie(value) {
   document.cookie = `${value}=; expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
 }
 
+function deleteAuthCookie(value) {
+  deleteCookie('til_auth');
+}
+
+function deleteUserCookie(value) {
+  deleteCookie('til_user');
+}
+
 export {
   saveAuthToCookie,
   saveUserToCookie,
   getAuthFromCookie,
   getUserFromCookie,
-  deleteCookie
+  deleteAuthCookie,
+  deleteUserCookie
 };

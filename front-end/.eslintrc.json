@@ -23,7 +23,8 @@
   ],
   "rules": {
     "prettier/prettier": ["error"],
-    "no-unused-vars": ["warn"]
+    "no-unused-vars": ["warn"],
+    "no-underscore-dangle": ["warn"]
   },
   "settings": {
     "import/resolver" : {

@@ -33,7 +33,7 @@
 </template>
 
 <script>
-  import {registerUser} from '@/apis';
+  import {registerUser} from '@/apis/auth';
   import {validateEmail} from '@/utils/validation';
 
   export default {
@@ -69,8 +69,8 @@
 
           this.initForm();
         } catch (error) {
-          console.error(error);
-          this.logMessage = error.response.data;
+          console.error(error?.response ?? error);
+          this.logMessage = error?.response?.data?.message;
         }
       }
     }

@@ -29,9 +29,7 @@
 </template>
 
 <script>
-  import {loginUser} from '@/apis';
   import {validateEmail} from '@/utils/validation';
-  import {saveAuthToCookie, saveUserToCookie} from '@/utils/cookies';
 
   export default {
     data() {
@@ -60,8 +58,8 @@
           await this.$store.dispatch('LOGIN_USER', data);
           this.$router.push('/main');
         } catch (error) {
-          console.error(error);
-          this.logMessage = error.response.data;
+          console.error(error?.response ?? error);
+          this.logMessage = error?.response?.data?.message;
           this.initForm();
         }
       }

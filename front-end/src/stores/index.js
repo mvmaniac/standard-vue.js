@@ -8,7 +8,7 @@ import {
   saveUserToCookie
 } from '@/utils/cookies';
 
-import {loginUser} from '@/apis';
+import {loginUser} from '@/apis/auth';
 
 Vue.use(Vuex);
 
@@ -34,6 +34,10 @@ export default new Vuex.Store({
     SET_TOKEN(state, token) {
       const draftState = state;
       draftState.token = token;
+    },
+    CLEAR_TOKEN(state) {
+      const draftState = state;
+      draftState.token = '';
     }
   },
   actions: {
