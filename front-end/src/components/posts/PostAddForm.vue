@@ -10,24 +10,44 @@
         <div>
           <label for="contents">Contents: </label>
           <textarea id="contents" v-model="contents" rows="5" />
+          <p v-if="!isContentsValid" class="validation-text warning">
+            Contents length must be less than 200
+          </p>
         </div>
         <button type="submit" class="btn">Create</button>
       </form>
+      <p class="log">{{ logMessage }}</p>
     </div>
   </div>
 </template>
 
 <script>
+  import {createPost} from '@/apis';
+
   export default {
     data() {
       return {
         title: '',
-        contents: ''
+        contents: '',
+        logMessage: ''
       };
     },
+    computed: {
+      isContentsValid() {
+        return this.contents.length <= 200;
+      }
+    },
     methods: {
-      submitForm() {
-        console.log('submit');
+      async submitForm() {
+        try {
+          const response = await createPost({
+            title: this.title,
+            contents: this.contents
+          });
+        } catch (error) {
+          console.error(error);
+          this.logMessage = error.response.data.message;
+        }
       }
     }
   };
