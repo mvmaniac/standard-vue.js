@@ -15,8 +15,6 @@
 
 ### 4. Setting
 
-*
-
 #### 4-1. front-end
 
 * init
@@ -40,6 +38,7 @@
 * eslint & prettier
 
     ``` javascript
+    npm i -D eslint
     npm i -D eslint-config-airbnb-base eslint-plugin-import eslint-import-resolver-alias
     npm i -D prettier eslint-config-prettier eslint-plugin-prettier
     ```
