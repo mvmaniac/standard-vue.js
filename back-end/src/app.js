@@ -21,7 +21,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 mongoose.connect(
   'mongodb+srv://test:1234@cluster0-hqi5f.mongodb.net/test?retryWrites=true&w=majority',
   {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
   }
 );
 mongoose.Promise = global.Promise;
