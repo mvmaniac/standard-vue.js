@@ -2,23 +2,18 @@
   "env": {
     "browser": true,
     "node": true,
-    "es2021": true,
+    "es2022": true,
     "jest": true
   },
-  "extends": [
-    "airbnb-base",
-    "plugin:vue/recommended",
-    "prettier",
-    "prettier/vue"
-  ],
+  "extends": ["airbnb-base", "plugin:vue/recommended", "prettier"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
   "parser": "vue-eslint-parser",
   "parserOptions": {
-    "parser": "babel-eslint",
-    "ecmaVersion": 2021,
+    "parser": "@babel/eslint-parser",
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": ["vue", "import"],
