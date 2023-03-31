@@ -20,7 +20,7 @@
   import PostListItem from '@/components/posts/PostListItem.vue';
   import LoadingSpinner from '@/components/common/LoadingSpinner.vue';
 
-  import {fetchPosts} from '@/apis/posts';
+  import { fetchPosts } from '@/apis/posts';
 
   export default {
     components: {
@@ -40,7 +40,7 @@
       async fetchData() {
         this.isLoading = true;
 
-        const {data} = await fetchPosts();
+        const { data } = await fetchPosts();
         this.posts = data.posts;
 
         this.isLoading = false;

@@ -7,7 +7,7 @@
       {{ post.contents }}
     </div>
     <div class="post-time">
-      {{ post.createdAt | formatDate }}
+      {{ post.createdAt | $filters.formatDate(post.createdAt) }}
       <ion-icon
         name="create-outline"
         class="icon ion-md-create"
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import {deletePost} from '@/apis/posts';
+  import { deletePost } from '@/apis/posts';
 
   export default {
     props: {

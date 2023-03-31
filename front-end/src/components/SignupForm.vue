@@ -33,8 +33,8 @@
 </template>
 
 <script>
-  import {registerUser} from '@/apis/auth';
-  import {validateEmail} from '@/utils/validation';
+  import { registerUser } from '@/apis/auth';
+  import { validateEmail } from '@/utils/validation';
 
   export default {
     data() {
@@ -64,7 +64,7 @@
             nickname: this.nickname
           };
 
-          const {data: result} = await registerUser(data);
+          const { data: result } = await registerUser(data);
           this.logMessage = `${result.username} 님이 가입되었습니다.`;
 
           this.initForm();

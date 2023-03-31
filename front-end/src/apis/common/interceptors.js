@@ -1,4 +1,4 @@
-import {getAuthFromCookie} from '@/utils/cookies';
+import { getAuthFromCookie } from '@/utils/cookies';
 
 export default function setInterceptors(instance) {
   instance.interceptors.request.use(

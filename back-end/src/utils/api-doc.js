@@ -1,5 +1,5 @@
 import swaggerUi from 'swagger-ui-express';
-import {Router} from 'express';
+import { Router } from 'express';
 import swaggerDocument from './api-spec.json';
 
 const router = Router();

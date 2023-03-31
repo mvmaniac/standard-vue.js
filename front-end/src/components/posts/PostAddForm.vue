@@ -22,7 +22,7 @@
 </template>
 
 <script>
-  import {createPost} from '@/apis/posts';
+  import { createPost } from '@/apis/posts';
 
   export default {
     data() {

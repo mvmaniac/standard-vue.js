@@ -5,15 +5,11 @@
     "description": "",
     "version": "1.0"
   },
-  "produces": [
-    "application/json"
-  ],
+  "produces": ["application/json"],
   "paths": {
     "/signup": {
       "post": {
-        "tags": [
-          "/signup"
-        ],
+        "tags": ["/signup"],
         "description": "회원 가입을 위한 API 입니다. 사용자 아이디, 암호, 닉네임 3개를 입력해야 합니다.",
         "parameters": [
           {
@@ -65,9 +61,7 @@
     },
     "/login": {
       "post": {
-        "tags": [
-          "/login"
-        ],
+        "tags": ["/login"],
         "description": "로그인하는 API 입니다. 사용자 아이디와 암호를 입력해야 합니다.",
         "parameters": [
           {
@@ -112,9 +106,7 @@
     },
     "/posts": {
       "get": {
-        "tags": [
-          "/posts"
-        ],
+        "tags": ["/posts"],
         "description": "사용자가 등록한 게시물의 목록을 가져오는 API입니다",
         "responses": {
           "200": {
@@ -141,9 +133,7 @@
         }
       },
       "post": {
-        "tags": [
-          "/posts"
-        ],
+        "tags": ["/posts"],
         "description": "게시물을 한개 생성하는 API입니다",
         "parameters": [
           {
@@ -188,17 +178,11 @@
     },
     "/posts/{_id}": {
       "get": {
-        "tags": [
-          "/posts"
-        ],
+        "tags": ["/posts"],
         "description": "특정 게시물을 조회하는 API입니다",
         "operationId": "getPostById",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "_id",
@@ -239,9 +223,7 @@
         }
       },
       "put": {
-        "tags": [
-          "/posts"
-        ],
+        "tags": ["/posts"],
         "description": "특정 게시물을 수정하는 API입니다",
         "operationId": "updatePost",
         "parameters": [
@@ -290,9 +272,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "/posts"
-        ],
+        "tags": ["/posts"],
         "description": "특정 게시물을 삭제하는 API입니다",
         "operationId": "deletePost",
         "parameters": [
@@ -376,10 +356,7 @@
   "security": [
     {
       "jwt": [],
-      "petstore_auth": [
-        "write:pets",
-        "read:pets"
-      ]
+      "petstore_auth": ["write:pets", "read:pets"]
     }
   ],
   "securityDefinitions": {

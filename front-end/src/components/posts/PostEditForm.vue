@@ -22,7 +22,7 @@
 </template>
 
 <script>
-  import {fetchPost, editPost} from '@/apis/posts';
+  import { fetchPost, editPost } from '@/apis/posts';
 
   export default {
     data() {
@@ -38,7 +38,7 @@
       }
     },
     async created() {
-      const {data} = await fetchPost(this.$route.params.id);
+      const { data } = await fetchPost(this.$route.params.id);
       console.log(data);
 
       this.title = data.title;

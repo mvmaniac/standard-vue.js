@@ -1,4 +1,4 @@
-import {posts} from './index';
+import { posts } from './index';
 
 // 학습 노트 조회와 관련된 CRUD API 함수
 // 학습 노트 목록 조회 API
@@ -26,4 +26,4 @@ function deletePost(postId) {
   return posts.delete(postId);
 }
 
-export {fetchPosts, fetchPost, createPost, editPost, deletePost};
+export { fetchPosts, fetchPost, createPost, editPost, deletePost };

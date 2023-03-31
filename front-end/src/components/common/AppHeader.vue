@@ -22,7 +22,7 @@
 </template>
 
 <script>
-  import {deleteAuthCookie, deleteUserCookie} from '@/utils/cookies';
+  import { deleteAuthCookie, deleteUserCookie } from '@/utils/cookies';
 
   export default {
     // ...mapGetters로 해도 됨

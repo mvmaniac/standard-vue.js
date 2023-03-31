@@ -1,16 +1,16 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
+
 import router from '@/routes';
 import store from '@/stores';
 import formatDate from '@/utils/filters';
+import { plugin as bus } from './plugins/bus';
 import App from './App.vue';
 
-Vue.config.productionTip = false;
-Vue.config.ignoredElements = [/^ion-/];
+const app = createApp(App);
 
-Vue.filter('formatDate', formatDate);
+app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('ion-');
+app.config.globalProperties.$filters = {
+  formatDate
+};
 
-new Vue({
-  router,
-  store,
-  render: (h) => h(App)
-}).$mount('#app');
+app.use(router).use(store).use(bus).mount('#app');

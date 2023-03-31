@@ -15,10 +15,10 @@ const postSchema = new mongoose.Schema(
       required: true
     }
   },
-  {timestamps: true}
+  { timestamps: true }
 );
 
-postSchema.index({Users: 1, title: 1}, {unique: true});
+postSchema.index({ Users: 1, title: 1 }, { unique: true });
 const PostModel = mongoose.model('Posts', postSchema);
 
 export default PostModel;

@@ -1,5 +1,10 @@
 module.exports = {
   devServer: {
-    overlay: false
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false
+      }
+    }
   }
 };

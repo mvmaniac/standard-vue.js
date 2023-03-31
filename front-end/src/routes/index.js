@@ -1,11 +1,8 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import store from '@/stores';
 
-Vue.use(VueRouter);
-
-const router = new VueRouter({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -22,21 +19,26 @@ const router = new VueRouter({
     {
       path: '/main',
       component: () => import('@/views/MainPage.vue'),
-      meta: {auth: true}
+      meta: { auth: true }
     },
     {
       path: '/add',
       component: () => import('@/views/PostAddPage.vue'),
-      meta: {auth: true}
+      meta: { auth: true }
     },
     {
       component: () => import('@/views/PostEditPage.vue'),
       path: '/post/:id',
-      meta: {auth: true}
+      meta: { auth: true }
     },
     {
-      path: '*',
+      path: '/404',
+      name: 'NotFoundPage',
       component: () => import('@/views/NotFoundPage.vue')
+    },
+    {
+      path: '/:catchAll(.*)', // Unrecognized path automatically matches 404
+      redirect: '/404'
     }
   ]
 });

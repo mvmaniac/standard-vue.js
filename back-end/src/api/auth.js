@@ -1,10 +1,10 @@
 // libs
 import bcrypt from 'bcrypt';
-import {Router} from 'express';
+import { Router } from 'express';
 
 // modules
 // import passport from '../passport.js';
-import {newToken} from '../utils/auth';
+import { newToken } from '../utils/auth';
 import UserModel from '../models/UserModel';
 
 // router init
@@ -54,7 +54,7 @@ router.post('/login', (req, res) => {
 });
 
 router.post('/signup', async (req, res) => {
-  const {username, password, nickname} = req.body;
+  const { username, password, nickname } = req.body;
 
   // encrypt password
   // NOTE: 10 is saltround which is a cost factor
@@ -70,7 +70,7 @@ router.post('/signup', async (req, res) => {
     const savedUser = await newUser.save();
     return res.status(200).json(savedUser);
   } catch (error) {
-    return res.status(500).json({error});
+    return res.status(500).json({ error });
   }
 });
 

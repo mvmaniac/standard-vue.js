@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema(
       required: true
     },
     nickname: String,
-    insertedDate: {type: Date, default: Date.now}
+    insertedDate: { type: Date, default: Date.now }
   },
   schemaOptions
 );

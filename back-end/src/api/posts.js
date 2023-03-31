@@ -1,5 +1,5 @@
 // libs
-import {Router} from 'express';
+import { Router } from 'express';
 // modules
 import PostModel from '../models/PostModel';
 
@@ -12,13 +12,13 @@ router.post('/', async (req, res) => {
       ...req.body,
       createdBy: req.user._id
     });
-    return res.status(201).json({data: doc});
+    return res.status(201).json({ data: doc });
   } catch (error) {
     console.log(error);
     if (error.code === 11000) {
-      return res.status(400).send({message: 'Duplicated Data', error});
+      return res.status(400).send({ message: 'Duplicated Data', error });
     }
-    return res.status(400).send({message: 'sth wrong', error});
+    return res.status(400).send({ message: 'sth wrong', error });
   }
 });
 
@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    return res.status(400).json({message: 'sth wrong', error});
+    return res.status(400).json({ message: 'sth wrong', error });
   }
 });
 
@@ -49,13 +49,13 @@ router.get('/:id', async (req, res) => {
       .exec();
 
     if (!doc) {
-      return res.status(400).json({message: 'The data is not found'});
+      return res.status(400).json({ message: 'The data is not found' });
     }
 
-    return res.status(200).json({...doc});
+    return res.status(200).json({ ...doc });
   } catch (error) {
     console.error(error);
-    return res.status(400).json({message: 'sth wrong', error});
+    return res.status(400).json({ message: 'sth wrong', error });
   }
 });
 
@@ -67,19 +67,19 @@ router.put('/:id', async (req, res) => {
         _id: req.params.id
       },
       req.body,
-      {new: true}
+      { new: true }
     )
       .lean()
       .exec();
 
     if (!updatedDoc) {
-      return res.status(400).json({message: 'cannot update the data'});
+      return res.status(400).json({ message: 'cannot update the data' });
     }
 
-    return res.status(200).json({...updatedDoc});
+    return res.status(200).json({ ...updatedDoc });
   } catch (error) {
     console.error(error);
-    return res.status(400).json({message: 'sth wrong', error});
+    return res.status(400).json({ message: 'sth wrong', error });
   }
 });
 
@@ -93,13 +93,13 @@ router.delete('/:id', async (req, res) => {
       .exec();
 
     if (!removed) {
-      return res.status(400).json({message: 'cannot remove the data'});
+      return res.status(400).json({ message: 'cannot remove the data' });
     }
 
-    return res.status(200).json({...removed});
+    return res.status(200).json({ ...removed });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({message: 'sth wrong', error});
+    return res.status(500).json({ message: 'sth wrong', error });
   }
 });
 

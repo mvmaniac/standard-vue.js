@@ -1,4 +1,4 @@
-import {instance} from './index';
+import { instance } from './index';
 
 // 로그인, 회원가입, 회원탈퇴
 // 회원가입 API
@@ -13,4 +13,4 @@ function loginUser(data) {
   return instance.post('login', data);
 }
 
-export {registerUser, loginUser};
+export { registerUser, loginUser };
