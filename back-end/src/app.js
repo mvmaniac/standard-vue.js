@@ -18,7 +18,7 @@ import { authenticateUser } from './utils/auth';
 const connect = async () => {
   try {
     await mongoose.connect(
-      'mongodb://test:1234@localhost:27017/?authMechanism=DEFAULT',
+      'mongodb://test:1234@127.0.0.1:27017/?authMechanism=DEFAULT',
       {
         dbName: 'test',
         connectTimeoutMS: 10000, // 30초 (default)
