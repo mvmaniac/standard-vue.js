@@ -1,5 +1,5 @@
 export default {
   timestamps: {
-    createdAt: 'created_at'
-  }
+    createdAt: 'created_at',
+  },
 };

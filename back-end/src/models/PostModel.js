@@ -6,16 +6,16 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      maxlength: 50
+      maxlength: 50,
     },
     contents: String,
     createdBy: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'Users',
-      required: true
-    }
+      required: true,
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 postSchema.index({ Users: 1, title: 1 }, { unique: true });

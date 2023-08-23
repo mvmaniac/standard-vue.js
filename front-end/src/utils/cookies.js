@@ -9,14 +9,14 @@ function saveUserToCookie(value) {
 function getAuthFromCookie() {
   return document.cookie.replace(
     /(?:(?:^|.*;\s*)til_auth\s*=\s*([^;]*).*$)|^.*$/,
-    '$1'
+    '$1',
   );
 }
 
 function getUserFromCookie() {
   return document.cookie.replace(
     /(?:(?:^|.*;\s*)til_user\s*=\s*([^;]*).*$)|^.*$/,
-    '$1'
+    '$1',
   );
 }
 
@@ -24,11 +24,11 @@ function deleteCookie(value) {
   document.cookie = `${value}=; expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
 }
 
-function deleteAuthCookie(value) {
+function deleteAuthCookie() {
   deleteCookie('til_auth');
 }
 
-function deleteUserCookie(value) {
+function deleteUserCookie() {
   deleteCookie('til_user');
 }
 
@@ -38,5 +38,5 @@ export {
   getAuthFromCookie,
   getUserFromCookie,
   deleteAuthCookie,
-  deleteUserCookie
+  deleteUserCookie,
 };

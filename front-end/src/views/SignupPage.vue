@@ -10,8 +10,8 @@
 
   export default {
     components: {
-      SignupForm
-    }
+      SignupForm,
+    },
   };
 </script>
 

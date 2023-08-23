@@ -9,8 +9,8 @@
 
   export default {
     components: {
-      PostAddForm
-    }
+      PostAddForm,
+    },
   };
 </script>
 

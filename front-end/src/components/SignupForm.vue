@@ -42,13 +42,13 @@
         username: '',
         password: '',
         nickname: '',
-        logMessage: ''
+        logMessage: '',
       };
     },
     computed: {
       isUsernameValid() {
         return validateEmail(this.username);
-      }
+      },
     },
     methods: {
       initForm() {
@@ -61,7 +61,7 @@
           const data = {
             username: this.username,
             password: this.password,
-            nickname: this.nickname
+            nickname: this.nickname,
           };
 
           const { data: result } = await registerUser(data);
@@ -72,8 +72,8 @@
           console.error(error?.response ?? error);
           this.logMessage = error?.response?.data?.message;
         }
-      }
-    }
+      },
+    },
   };
 </script>
 

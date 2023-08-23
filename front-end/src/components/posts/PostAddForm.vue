@@ -29,20 +29,20 @@
       return {
         title: '',
         contents: '',
-        logMessage: ''
+        logMessage: '',
       };
     },
     computed: {
       isContentsValid() {
         return this.contents.length <= 200;
-      }
+      },
     },
     methods: {
       async submitForm() {
         try {
           const response = await createPost({
             title: this.title,
-            contents: this.contents
+            contents: this.contents,
           });
 
           this.$router.push('/main');
@@ -50,8 +50,8 @@
           console.error(error?.response ?? error);
           this.logMessage = error?.response?.data?.message;
         }
-      }
-    }
+      },
+    },
   };
 </script>
 

@@ -25,12 +25,12 @@
   export default {
     components: {
       PostListItem,
-      LoadingSpinner
+      LoadingSpinner,
     },
     data() {
       return {
         posts: [],
-        isLoading: false
+        isLoading: false,
       };
     },
     created() {
@@ -44,8 +44,8 @@
         this.posts = data.posts;
 
         this.isLoading = false;
-      }
-    }
+      },
+    },
   };
 </script>
 

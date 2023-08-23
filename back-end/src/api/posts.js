@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
   try {
     const doc = await PostModel.create({
       ...req.body,
-      createdBy: req.user._id
+      createdBy: req.user._id,
     });
     return res.status(201).json({ data: doc });
   } catch (error) {
@@ -25,13 +25,13 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     const docs = await PostModel.find({
-      createdBy: req.user._id
+      createdBy: req.user._id,
     })
       .lean()
       .exec();
 
     return res.status(200).json({
-      posts: docs
+      posts: docs,
     });
   } catch (error) {
     console.error(error);
@@ -43,7 +43,7 @@ router.get('/:id', async (req, res) => {
   try {
     const doc = await PostModel.findOne({
       createdBy: req.user._id,
-      _id: req.params.id
+      _id: req.params.id,
     })
       .lean()
       .exec();
@@ -64,10 +64,10 @@ router.put('/:id', async (req, res) => {
     const updatedDoc = await PostModel.findOneAndUpdate(
       {
         createdBy: req.user._id,
-        _id: req.params.id
+        _id: req.params.id,
       },
       req.body,
-      { new: true }
+      { new: true },
     )
       .lean()
       .exec();
@@ -87,7 +87,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const removed = await PostModel.findOneAndRemove({
       createdBy: req.user._id,
-      _id: req.params.id
+      _id: req.params.id,
     })
       .lean()
       .exec();

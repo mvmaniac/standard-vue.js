@@ -37,13 +37,13 @@
       return {
         username: '',
         password: '',
-        logMessage: ''
+        logMessage: '',
       };
     },
     computed: {
       isUsernameValid() {
         return validateEmail(this.username);
-      }
+      },
     },
     methods: {
       initForm() {
@@ -54,7 +54,7 @@
         try {
           const data = {
             username: this.username,
-            password: this.password
+            password: this.password,
           };
           await this.$store.dispatch('LOGIN_USER', data);
           this.$router.push('/main');
@@ -63,8 +63,8 @@
           this.logMessage = error?.response?.data?.message;
           this.initForm();
         }
-      }
-    }
+      },
+    },
   };
 </script>
 

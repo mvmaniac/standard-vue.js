@@ -6,41 +6,41 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/login'
+      redirect: '/login',
     },
     {
       path: '/login',
-      component: () => import('@/views/LoginPage.vue')
+      component: () => import('@/views/LoginPage.vue'),
     },
     {
       path: '/signup',
-      component: () => import('@/views/SignupPage.vue')
+      component: () => import('@/views/SignupPage.vue'),
     },
     {
       path: '/main',
       component: () => import('@/views/MainPage.vue'),
-      meta: { auth: true }
+      meta: { auth: true },
     },
     {
       path: '/add',
       component: () => import('@/views/PostAddPage.vue'),
-      meta: { auth: true }
+      meta: { auth: true },
     },
     {
       component: () => import('@/views/PostEditPage.vue'),
       path: '/post/:id',
-      meta: { auth: true }
+      meta: { auth: true },
     },
     {
       path: '/404',
       name: 'NotFoundPage',
-      component: () => import('@/views/NotFoundPage.vue')
+      component: () => import('@/views/NotFoundPage.vue'),
     },
     {
       path: '/:catchAll(.*)', // Unrecognized path automatically matches 404
-      redirect: '/404'
-    }
-  ]
+      redirect: '/404',
+    },
+  ],
 });
 
 router.beforeEach((to, from, next) => {

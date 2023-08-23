@@ -7,12 +7,12 @@ export default function setInterceptors(instance) {
       draftConfig.headers.Authorization = getAuthFromCookie();
       return draftConfig;
     },
-    (error) => Promise.reject(error)
+    (error) => Promise.reject(error),
   );
 
   instance.interceptors.response.use(
     (response) => response,
-    (error) => Promise.reject(error)
+    (error) => Promise.reject(error),
   );
 
   return instance;

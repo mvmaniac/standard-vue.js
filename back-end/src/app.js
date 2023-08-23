@@ -22,8 +22,8 @@ const connect = async () => {
       {
         dbName: 'test',
         connectTimeoutMS: 10000, // 30초 (default)
-        socketTimeoutMS: 360000 // 6분 (default)
-      }
+        socketTimeoutMS: 360000, // 6분 (default)
+      },
     );
     console.log('MongoDB connected');
   } catch (err) {

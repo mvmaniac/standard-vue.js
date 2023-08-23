@@ -32,7 +32,7 @@
       },
       logoLink() {
         return this.isUserLogin ? '/main' : '/';
-      }
+      },
     },
     methods: {
       logoutUser() {
@@ -45,8 +45,8 @@
         deleteUserCookie();
 
         this.$router.push('/');
-      }
-    }
+      },
+    },
   };
 </script>
 

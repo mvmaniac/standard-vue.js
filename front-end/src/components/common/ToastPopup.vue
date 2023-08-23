@@ -11,13 +11,13 @@
     data() {
       return {
         open: false,
-        message: ''
+        message: '',
       };
     },
     computed: {
       toastAnimationClass() {
         return this.open ? 'show' : null;
-      }
+      },
     },
     created() {
       this.$bus.on('show:toast', this.showToast);
@@ -34,8 +34,8 @@
       },
       hideToast() {
         this.open = false;
-      }
-    }
+      },
+    },
   };
 </script>
 

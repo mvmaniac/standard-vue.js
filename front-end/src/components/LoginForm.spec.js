@@ -13,9 +13,9 @@ describe('LoginForm.vue', () => {
     const wrapper = shallowMount(LoginForm, {
       data() {
         return {
-          username: 'dev'
+          username: 'dev',
         };
-      }
+      },
     });
 
     const warningText = wrapper.find('.warning');
@@ -27,9 +27,9 @@ describe('LoginForm.vue', () => {
       data() {
         return {
           username: '',
-          password: ''
+          password: '',
         };
-      }
+      },
     });
 
     const button = wrapper.find('button');

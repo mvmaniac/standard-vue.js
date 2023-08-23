@@ -12,8 +12,8 @@
 
   export default {
     components: {
-      AppHeader
-    }
+      AppHeader,
+    },
   };
 </script>
 

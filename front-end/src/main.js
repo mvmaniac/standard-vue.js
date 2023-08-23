@@ -10,7 +10,7 @@ const app = createApp(App);
 
 app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('ion-');
 app.config.globalProperties.$filters = {
-  formatDate
+  formatDate,
 };
 
 app.use(router).use(store).use(bus).mount('#app');

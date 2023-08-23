@@ -8,16 +8,16 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
       trim: true,
-      maxlength: 50
+      maxlength: 50,
     },
     password: {
       type: String,
-      required: true
+      required: true,
     },
     nickname: String,
-    insertedDate: { type: Date, default: Date.now }
+    insertedDate: { type: Date, default: Date.now },
   },
-  schemaOptions
+  schemaOptions,
 );
 
 const UserModel = mongoose.model('Users', userSchema);

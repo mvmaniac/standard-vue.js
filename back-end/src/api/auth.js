@@ -14,7 +14,7 @@ const router = Router();
 router.post('/login', (req, res) => {
   // find the user
   UserModel.findOne({
-    username: req.body.username
+    username: req.body.username,
   })
     .then((user) => {
       // non registered user
@@ -32,7 +32,7 @@ router.post('/login', (req, res) => {
           // current logged-in user
           const loggedInUser = {
             username: user.username,
-            nickname: user.nickname
+            nickname: user.nickname,
           };
 
           // return the information including token as JSON
@@ -40,7 +40,7 @@ router.post('/login', (req, res) => {
             success: true,
             user: loggedInUser,
             message: 'Login Success',
-            token
+            token,
           });
         } else {
           res.status(401).json('Authentication failed. Wrong password.');
@@ -64,7 +64,7 @@ router.post('/signup', async (req, res) => {
     const newUser = new UserModel({
       username,
       password: hashedPassword,
-      nickname
+      nickname,
     });
 
     const savedUser = await newUser.save();

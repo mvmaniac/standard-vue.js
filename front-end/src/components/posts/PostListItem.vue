@@ -7,7 +7,7 @@
       {{ post.contents }}
     </div>
     <div class="post-time">
-      {{ post.createdAt | $filters.formatDate(post.createdAt) }}
+      {{ $filters.formatDate(post.createdAt) }}
       <ion-icon
         name="create-outline"
         class="icon ion-md-create"
@@ -31,8 +31,8 @@
     props: {
       post: {
         type: Object,
-        required: true
-      }
+        required: true,
+      },
     },
     methods: {
       async deletePost() {
@@ -43,8 +43,8 @@
       },
       routePostEditPage() {
         this.$router.push(`/post/${this.post._id}`);
-      }
-    }
+      },
+    },
   };
 </script>
 

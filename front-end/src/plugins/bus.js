@@ -12,5 +12,5 @@ export const plugin = {
 
     app.provide(key, emitter); // Composition API 지원
     app.config.globalProperties.$bus = emitter; // Options API 지원
-  }
+  },
 };

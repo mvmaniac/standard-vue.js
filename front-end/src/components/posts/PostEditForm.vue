@@ -29,13 +29,13 @@
       return {
         title: '',
         contents: '',
-        logMessage: ''
+        logMessage: '',
       };
     },
     computed: {
       isContentsValid() {
         return this.contents.length <= 200;
-      }
+      },
     },
     async created() {
       const { data } = await fetchPost(this.$route.params.id);
@@ -49,7 +49,7 @@
         try {
           await editPost(this.$route.params.id, {
             title: this.title,
-            contents: this.contents
+            contents: this.contents,
           });
 
           this.$router.push('/main');
@@ -57,8 +57,8 @@
           console.error(error?.response ?? error);
           this.logMessage = error?.response?.data?.message;
         }
-      }
-    }
+      },
+    },
   };
 </script>
 

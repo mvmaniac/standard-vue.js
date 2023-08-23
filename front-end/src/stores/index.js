@@ -4,7 +4,7 @@ import {
   getAuthFromCookie,
   getUserFromCookie,
   saveAuthToCookie,
-  saveUserToCookie
+  saveUserToCookie,
 } from '@/utils/cookies';
 
 import { loginUser } from '@/apis/auth';
@@ -12,10 +12,10 @@ import { loginUser } from '@/apis/auth';
 export default createStore({
   state: {
     username: getUserFromCookie() || '',
-    token: getAuthFromCookie() || ''
+    token: getAuthFromCookie() || '',
   },
   getters: {
-    isLogin: (state) => state.username !== ''
+    isLogin: (state) => state.username !== '',
   },
   mutations: {
     SET_USERNAME(state, username) {
@@ -33,7 +33,7 @@ export default createStore({
     CLEAR_TOKEN(state) {
       const draftState = state;
       draftState.token = '';
-    }
+    },
   },
   actions: {
     async LOGIN_USER({ commit }, data) {
@@ -46,6 +46,6 @@ export default createStore({
       saveUserToCookie(result.user.username);
 
       return result;
-    }
-  }
+    },
+  },
 });
