@@ -24,7 +24,7 @@
     "@vueuse/components": "^14.1.0",
     "@vueuse/core": "^14.1.0",
     "algoliasearch": "^5.46.3",
-    "axios": "^1.13.2",
+    "axios": "^1.15.0",
     "browser-image-resizer": "^2.4.1",
     "firebase": "^12.8.0",
     "instantsearch.css": "^8.9.0",
